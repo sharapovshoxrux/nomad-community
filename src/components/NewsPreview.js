@@ -1,36 +1,30 @@
-const articles = [
+const dummyNews = [
   {
-    title: "Green Card Policy Updates in 2025",
-    summary: "U.S. immigration adjusts timelines and requirements for Central Asian applicants...",
+    title: "Central Asian Job Fair in NYC",
+    summary: "Hundreds of job opportunities shared at a local event...",
     image: "https://via.placeholder.com/300x150",
-    link: "/news/green-card-update"
+    link: "/news/job-fair-nyc"
   },
   {
-    title: "Uzbek Cultural Festival This Weekend in Queens",
-    summary: "A colorful celebration of Uzbek food, dance, and music arrives this Sunday...",
+    title: "New Mosque Opens in Brooklyn",
+    summary: "A new mosque is now serving the Uzbek and Kyrgyz community...",
     image: "https://via.placeholder.com/300x150",
-    link: "/news/uzbek-festival-nyc"
+    link: "/news/new-mosque-brooklyn"
   },
   {
-    title: "Free Legal Aid Center Opens for Immigrants",
-    summary: "Immigrants in Brooklyn now have access to free immigration legal advice...",
+    title: "Visa Policy Update for Green Card Holders",
+    summary: "Important changes announced for green card applicants...",
     image: "https://via.placeholder.com/300x150",
-    link: "/news/legal-aid-2025"
+    link: "/news/visa-policy-update"
   },
-  {
-    title: "Kyrgyz Job Board Expands to New Jersey",
-    summary: "Job seekers from Central Asia can now access listings from local employers...",
-    image: "https://via.placeholder.com/300x150",
-    link: "/news/kyrgyz-jobs"
-  }
 ];
 
-function News() {
+function NewsPreview() {
   return (
     <section style={{ padding: "2rem" }}>
-      <h1 style={{ fontSize: "2rem", marginBottom: "1.5rem" }}>All News</h1>
+      <h2 style={{ fontSize: "1.8rem", marginBottom: "1rem" }}>Latest News</h2>
       <div style={{ display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
-        {articles.map((item) => (
+        {dummyNews.map((item) => (
           <div key={item.title} style={{ border: "1px solid #ccc", borderRadius: "12px", padding: "1rem", background: "#fff" }}>
             <img src={item.image} alt={item.title} style={{ width: "100%", borderRadius: "8px" }} />
             <h3 style={{ fontSize: "1.2rem", margin: "0.8rem 0" }}>{item.title}</h3>
@@ -45,4 +39,4 @@ function News() {
   );
 }
 
-export default News;
+export default NewsPreview;
