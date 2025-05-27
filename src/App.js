@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import Mosques from "./pages/Mosques";
 import Legal from "./pages/Legal";
 import Jobs from "./pages/Jobs";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="mosques" element={<Mosques />} />
           <Route path="legal" element={<Legal />} />
           <Route path="jobs" element={<Jobs />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Router>

@@ -9,27 +9,37 @@ const links = [
 
 function QuickLinks() {
   return (
-    <section style={{ padding: "2rem", display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))" }}>
-      {links.map((link) => (
-        <Link
-          key={link.title}
-          to={link.path}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            padding: "1.5rem",
-            border: "1px solid #ccc",
-            borderRadius: "12px",
-            textDecoration: "none",
-            color: "#333",
-            background: "#f9f9f9"
-          }}
-        >
-          <div style={{ fontSize: "2rem" }}>{link.emoji}</div>
-          <span style={{ marginTop: "0.5rem", fontWeight: "bold" }}>{link.title}</span>
-        </Link>
-      ))}
+    <section style={{ padding: "3rem 1rem" }}>
+      <h2 style={{ textAlign: "center", fontSize: "2rem", marginBottom: "2rem" }}>Explore Quick Links</h2>
+      <div style={{ display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", maxWidth: "900px", margin: "0 auto" }}>
+        {links.map((link) => (
+          <Link
+            key={link.title}
+            to={link.path}
+            style={{
+              textDecoration: "none",
+              padding: "2rem 1rem",
+              backgroundColor: "#ffffff",
+              borderRadius: "12px",
+              boxShadow: "0 3px 8px rgba(0,0,0,0.05)",
+              textAlign: "center",
+              color: "#333",
+              transition: "all 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-4px)";
+              e.currentTarget.style.boxShadow = "0 5px 15px rgba(0,0,0,0.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow = "0 3px 8px rgba(0,0,0,0.05)";
+            }}
+          >
+            <div style={{ fontSize: "2.2rem" }}>{link.emoji}</div>
+            <h3 style={{ marginTop: "0.8rem", fontSize: "1.1rem" }}>{link.title}</h3>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 }

@@ -1,37 +1,48 @@
 const dummyNews = [
   {
-    title: "Central Asian Job Fair in NYC",
-    summary: "Hundreds of job opportunities shared at a local event...",
-    image: "https://via.placeholder.com/300x150",
-    link: "/news/job-fair-nyc"
+    title: "Job Fair in Brooklyn for Immigrants",
+    summary: "Hundreds of opportunities shared at a Central Asian-focused event.",
+    image: "https://via.placeholder.com/300x160",
+    link: "/news/job-fair"
   },
   {
-    title: "New Mosque Opens in Brooklyn",
-    summary: "A new mosque is now serving the Uzbek and Kyrgyz community...",
-    image: "https://via.placeholder.com/300x150",
-    link: "/news/new-mosque-brooklyn"
+    title: "New Mosque Opens in Queens",
+    summary: "The community celebrates the opening of a new prayer space.",
+    image: "https://via.placeholder.com/300x160",
+    link: "/news/new-mosque"
   },
   {
-    title: "Visa Policy Update for Green Card Holders",
-    summary: "Important changes announced for green card applicants...",
-    image: "https://via.placeholder.com/300x150",
-    link: "/news/visa-policy-update"
+    title: "Free Legal Clinic This Weekend",
+    summary: "Volunteers offer help with immigration paperwork and legal advice.",
+    image: "https://via.placeholder.com/300x160",
+    link: "/news/legal-clinic"
   },
 ];
 
 function NewsPreview() {
   return (
-    <section style={{ padding: "2rem" }}>
-      <h2 style={{ fontSize: "1.8rem", marginBottom: "1rem" }}>Latest News</h2>
-      <div style={{ display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+    <section style={{ padding: "3rem 1rem", backgroundColor: "#f7f9fc" }}>
+      <h2 style={{ textAlign: "center", fontSize: "2rem", marginBottom: "2rem" }}>Latest News</h2>
+      <div style={{ display: "grid", gap: "1.5rem", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", maxWidth: "1000px", margin: "0 auto" }}>
         {dummyNews.map((item) => (
-          <div key={item.title} style={{ border: "1px solid #ccc", borderRadius: "12px", padding: "1rem", background: "#fff" }}>
-            <img src={item.image} alt={item.title} style={{ width: "100%", borderRadius: "8px" }} />
-            <h3 style={{ fontSize: "1.2rem", margin: "0.8rem 0" }}>{item.title}</h3>
-            <p style={{ color: "#555", fontSize: "0.95rem" }}>{item.summary}</p>
-            <a href={item.link} style={{ display: "inline-block", marginTop: "0.5rem", color: "#4F8EF7", textDecoration: "none", fontWeight: "bold" }}>
-              Read more →
-            </a>
+          <div key={item.title} style={{
+            backgroundColor: "#fff",
+            borderRadius: "12px",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.04)",
+            overflow: "hidden",
+            transition: "transform 0.2s",
+          }}
+            onMouseEnter={(e) => e.currentTarget.style.transform = "translateY(-5px)"}
+            onMouseLeave={(e) => e.currentTarget.style.transform = "translateY(0)"}
+          >
+            <img src={item.image} alt={item.title} style={{ width: "100%", height: "160px", objectFit: "cover" }} />
+            <div style={{ padding: "1rem" }}>
+              <h3 style={{ fontSize: "1.2rem", marginBottom: "0.5rem" }}>{item.title}</h3>
+              <p style={{ fontSize: "0.95rem", color: "#555" }}>{item.summary}</p>
+              <a href={item.link} style={{ color: "#4F8EF7", fontWeight: "bold", display: "inline-block", marginTop: "0.5rem" }}>
+                Read more →
+              </a>
+            </div>
           </div>
         ))}
       </div>
