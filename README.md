@@ -41,3 +41,13 @@ A helpful website for Central Asian immigrants in the U.S.
 ```bash
 npm install
 npm run dev
+The site will open in your browser.
+📌 Project Status
+✅ Pages created
+✅ Routing done
+❌ Still adding news & content
+🚀 Launch soon
+👤 Created By
+Shokhrukh Sharapov
+Email: shoxruxsharapov@gmail.com
+Site: no-mad.us
